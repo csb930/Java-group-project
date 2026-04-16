@@ -20,7 +20,7 @@ public Loan(double loanAmount, double annualRate, int years, double extraPayment
        this.annualInterestRate = annualInterestRate; 
        this.years = years; 
        this.extraPayment = extraPayment; 
-       loanCreationDate = new java.util.Date(); 
+       this.loanCreationDate = new java.util.Date(); 
       } 
 
       public double getAnnualInterestRate() { 
