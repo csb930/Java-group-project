@@ -56,6 +56,9 @@ public class TestLoanClassTemplate {
 
 	  while (myLoanAmount >= myMonthlyPayment) {
 		  // to do A1 same as A2
+		  interest = myLoanAmount * myMonthlyInterestRate;
+		  
+		  
 		  
 	  }
 	  if (myLoanAmount < myMonthlyPayment) {
