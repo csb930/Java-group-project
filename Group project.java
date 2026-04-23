@@ -4,7 +4,6 @@ import java.util.Scanner;
 import java.util.Date; 
 
 public class Loan { 
-public static void main (String[] args) 
 private double loanAmount;  
 
 private double annualInterestRate; 
@@ -41,7 +40,7 @@ public Loan(double loanAmount, double annualInterestRate, int years, double extr
             this.annualInterestRate = annualInterestRate; 
       } 
 
-      public intYears () { 
+      public getintYears () { 
             return years; 
       } 
       public void setyears (int years) { 
@@ -54,5 +53,11 @@ public Loan(double loanAmount, double annualInterestRate, int years, double extr
 
       public void setLoanAmount (double loanAmount) { 
             this.loanAmount = loanAmount; 
-      } 
+      }
+      public Date getLoanCreationDate() {
+       return loanCreationDate;
+      }
+      public void setLoanCreationDate (Date loanCreationDate) {
+            this.loanCreationDate = loanCreationDate;
+      }
  
