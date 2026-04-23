@@ -1,11 +1,10 @@
+Package GroupProject2026
 import java.util.Scanner; 
 
 import java.util.Date; 
 
- 
-
-Class Loan { 
-
+public class Loan { 
+public static void main (String[] args) 
 private double loanAmount;  
 
 private double annualInterestRate; 
@@ -16,9 +15,12 @@ private double monthlyPayment;
 
 private Date loanCreationDate; 
 
- 
+ //no arg constructor
+public Loan() {
+ this.(2.5, 1, 100);
+}
 //constructor
-public Loan(double loanAmount, double annualRate, int years, double extraPayment) { 
+public Loan(double loanAmount, double annualInterestRate, int years, double extraPayment) { 
 
        this.loanAmount = loanAmount;  
 
