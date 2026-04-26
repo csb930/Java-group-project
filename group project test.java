@@ -1,6 +1,9 @@
-import java.util.Scanner
+import java.util.Scanner;
 
 public class TestLoan {
     //Makes a scanner
-    Scanner input = new Scanner(System.in);
+    public static void main(String[] args)  {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Testloan file works.");
+    }
 }
