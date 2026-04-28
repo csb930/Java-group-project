@@ -11,11 +11,13 @@ private double loanAmount;
 
 private double annualInterestRate; 
 
-private int years;      
+private int years;
 
 private double monthlyPayment; 
 
 private Date loanCreationDate; 
+
+private double totalPayment;
 
  //no arg constructor
 public Loan() {
@@ -59,7 +61,16 @@ public Loan(double annualInterestRate, int years, double loanAmount, double extr
       public Date getLoanCreationDate() {
         return loanCreationDate;
       }
-      
+      public double getTotalPayment () {
+        return getMonthlyPayment() * years * 12;
+      }
+      public void setTotalPayment (double totalPayment) {
+       this.totalPayment = totalPayment;
+      }
+      public double getMonthlyPayment() {
+       double monthlyInterestRate = annualInterestRate / 1200;
+       double monthlyPayment = loanAmount * monthlyInterestRate / (1 - (1 / Math.pow(1 + monthlyInterestRate, years * 12)));
+       return monthlyPayment;
 
 
  
