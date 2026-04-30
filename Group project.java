@@ -62,7 +62,7 @@ public Loan(double loanAmount, double annualRate, int years, double extraPayment
       public double getTotalPayment() {
 	          double totalPayment = getMonthlyPayment() * numberOfYears * 12;
 	          return totalPayment;    
-	}
+	  }
 
       public double getTotalInterest() {
 	          double totalInterest = totalPayment - loanAmount;
