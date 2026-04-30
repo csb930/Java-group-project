@@ -55,7 +55,7 @@ public Loan(double loanAmount, double annualInterestRate, int years, double extr
             this.loanAmount = loanAmount; 
       }
       public Date getLoanCreationDate() {
-       return loanCreationDate;
+    		return loanCreationDate;
       }
       public void setLoanCreationDate (Date loanCreationDate) {
             this.loanCreationDate = loanCreationDate;
