@@ -58,4 +58,17 @@ public Loan(double loanAmount, double annualRate, int years, double extraPayment
             double monthlyPayment = loanAmount * monthlyInterestRate / (1 - (1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12)));
             return monthlyPayment;    
       }
- 
+
+      public double getTotalPayment() {
+	          double totalPayment = getMonthlyPayment() * numberOfYears * 12;
+	          return totalPayment;    
+	}
+
+      public double getTotalInterest() {
+	          double totalInterest = totalPayment - loanAmount;
+	          return totalInterest;    
+	  }
+
+      public java.util.Date getLoanDate() {
+	          return loanDate;
+	  }
