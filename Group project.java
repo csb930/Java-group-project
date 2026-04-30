@@ -61,6 +61,12 @@ public Loan(double loanAmount, double annualInterestRate, int years, double extr
             this.loanCreationDate = loanCreationDate;
       }
 
+	public double getMonthlyPayment() {
+            double monthlyInterestRate = annualInterestRate / 1200;
+            double monthlyPayment = loanAmount * monthlyInterestRate / (1 - (1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12)));
+            return monthlyPayment;    
+      }
+	
       public double getTotalPayment() {
 	          double totalPayment = getMonthlyPayment() * numberOfYears * 12;
 	          return totalPayment;    
