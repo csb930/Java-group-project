@@ -35,6 +35,10 @@ public Loan(double annualInterestRate, int years, double loanAmount, double extr
 
        loanCreationDate = new java.util.Date(); 
       } 
+      public double getMonthlyPayment() {
+       double monthlyInterestRate = annualInterestRate / (12 * 100);
+       double monthlyPayment = loanAmount * monthlyInterestRate / (1 - (1 / Math.pow(1 + monthlyInterestRate, years * 12)));
+       return monthlyPayment;
 
       public double getAnnualInterestRate() { 
             return annualInterestRate; 
@@ -67,10 +71,26 @@ public Loan(double annualInterestRate, int years, double loanAmount, double extr
       public void setTotalPayment (double totalPayment) {
        this.totalPayment = totalPayment;
       }
-      public double getMonthlyPayment() {
-       double monthlyInterestRate = annualInterestRate / 1200;
-       double monthlyPayment = loanAmount * monthlyInterestRate / (1 - (1 / Math.pow(1 + monthlyInterestRate, years * 12)));
-       return monthlyPayment;
+      public void getSavingsSummary() {
+       double balance = this.loanAmount;
+       double monthlyRate = this.annualInterestRate / (12*100);
+       int months = 0;
+       double totalInterestPaid = 0;
+       while (balance > 0) {
+        months++;
+        double interest = balance * monthlyRate;
+        double principalPaid = (getMonthlyPayment() + extraPayment) - interest;
+        if (principalPaid > balance) principalPaid = balance;
+        
+        balance -= principalPaid;
+        totalInterestPaid += interest;
+    }
+    
+    System.out.println("With extra payments, you finish in " + months + " months.");
+    System.out.println("Total interest paid: $" + totalInterestPaid);
+      }
+}
+
 
 
  
