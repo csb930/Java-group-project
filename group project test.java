@@ -49,21 +49,36 @@ System.out.print(  "Enter annual interest rate, for example, 8.25: ");
 	  double principal = 0.0;
 	  double totalInterest = 0.0;
 
-	  while (myLoanAmount >= myMonthlyPayment) {
+	  double balanceA1 = myLoanAmount;
+	  int monthsA1 = 0;
+	  double monthlyInterestRate = myAnnualInterestRate / 1200;
+	  while (balanceA1 >= myMonthlyPayment) {
 		  // to do A1 same as A2
-		  double interestRate = myLoanAmount * (annualInterestRate / 1200);
+		  double interestRate = balanceA1 * monthlyInterestRate;
           double principal = myMonthlyPayment - interestRate;
           myLoanAmount -= principal;
-          monthCounter++;
+          monthaA1++;
 	  }
-	  if (myLoanAmount < myMonthlyPayment) {
+	  if (balanceA1 < myMonthlyPayment) {
 		  // to do B1 same as B2
           //Last month
-          double finalInterestRate = myLoanAmount * monthlyInterestRate;
-          double finalPayment = myLoanAmount + finalInterestRate;
-
-          myLoanAmount = 0;
+          monthsA1++;
+		  balanceA1 = 0;
       }
+	  double balanceA2 = myLoanAmount; 
+	  int monthsA2 = 0;
+	  double monthlyInterestRate = annualInterestRate / 1200;
+
+	  while (balanceA2 >= (myMonthlyPayment + myExtraPayment)) {
+		  double interestRate = balanceA2 * monthlyInterestRate;
+		  double principal = (myMonthlyPayment + myExtraPayment) - interestRate;
+		  balanceA2 -= principal;
+		  monthsA2++;
+
+		  if (balanceA2 > 0) {
+			  monthsA2++;
+			  balanceA2 = 0;
+		  }
           
       else {
           //normal month
