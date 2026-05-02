@@ -106,6 +106,7 @@ public class TestLoanClassTemplate {
 		interest = myLoanAmount * myMonthlyInterestRate;
         principal = myMonthlyPayment - interest;
         myLoanAmount = myLoanAmount - principal - extraPay;
+		  month++;
 
         totalInterest += interest;
         month++;
@@ -123,6 +124,7 @@ public class TestLoanClassTemplate {
 
         totalInterest += interest;
         month++;
+		  month++;
 	  }
 	  if (myLoanAmount < myMonthlyPayment) {
 		  // to do
@@ -132,6 +134,7 @@ public class TestLoanClassTemplate {
 		interest = myLoanAmount * myMonthlyInterestRate;
         totalInterest += interest;
         month++;
+		  month++;
 	  }
 	  double interestSaved = l.getTotalInterest() - totalInterest;
 	  System.out.printf("Total interest $%.2f%nTotal interest saved $%.2f%nTotal months %d %n",

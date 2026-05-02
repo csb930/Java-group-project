@@ -68,7 +68,7 @@ public Loan(double loanAmount, double annualInterestRate, int years, double extr
             this.loanAmount = loanAmount; 
       }
       public Date getLoanCreationDate() {
-       return loanCreationDate;
+    		return loanCreationDate;
       }
       public void setLoanCreationDate (Date loanCreationDate) {
             this.loanCreationDate = loanCreationDate;
@@ -88,3 +88,23 @@ public Loan(double loanAmount, double annualInterestRate, int years, double extr
       }
  
 }
+
+	public double getMonthlyPayment() {
+            double monthlyInterestRate = annualInterestRate / 1200;
+            double monthlyPayment = loanAmount * monthlyInterestRate / (1 - (1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12)));
+            return monthlyPayment;    
+      }
+	
+      public double getTotalPayment() {
+	          double totalPayment = getMonthlyPayment() * numberOfYears * 12;
+	          return totalPayment;    
+	  }
+
+      public double getTotalInterest() {
+	          double totalInterest = totalPayment - loanAmount;
+	          return totalInterest;    
+	  }
+
+      public java.util.Date getLoanDate() {
+	          return loanDate;
+	  }
