@@ -1,5 +1,6 @@
+// by. Carl Bolen, Tina Haidari, Arly Jahuey-Paz and Jessica Danielle Pittman
 import java.util.Scanner
-
+	
 public class TestLoan {
     public static void main(String[] args){
     //Makes a scanner
@@ -82,6 +83,9 @@ public class TestLoan {
 		  // caculate the principal paid this month from myMonthlyPayment minus the new month's interest
 		  // caculate the new myLoanAmount after minus this month's principal, then minus extra payment
 		  // add the interest paid this month to totalInterest
+		  interest = myLoanAmount * myMonthlyInterestRate;
+        principal = myMonthlyPayment - interest;
+        myLoanAmount = myLoanAmount - principal - extraPay;
 		  month++;
 
 	  }
@@ -91,12 +95,19 @@ public class TestLoan {
 		  // caculate the principal paid this month from myMonthlyPayment minus the new month's interest
 		  // caculate the new myLoanAmount after minus this month's principal
 		  // add the interest paid this month to totalInterest
+		  interest = myLoanAmount * myMonthlyInterestRate;
+        principal = myMonthlyPayment - interest;
+        myLoanAmount = myLoanAmount - principal;
+
+        totalInterest += interest;
 		  month++;
 	  }
 	  if (myLoanAmount < myMonthlyPayment) {
 		  // to do
 		  // caculate the new month's interest based on myLoanAmount and myMonthlyInterestRate
 		  // add the interest paid this month to totalInterest
+		  interest = myLoanAmount * myMonthlyInterestRate;
+        totalInterest += interest;
 		  month++;
 	  }
 	  double interestSaved = l.getTotalInterest() - totalInterest;
