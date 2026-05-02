@@ -62,7 +62,7 @@ System.out.print(  "Enter annual interest rate, for example, 8.25: ");
 		  interest = balanceA1 * myMonthlyInterestRate;
           principal = myMonthlyPayment - interest;
           balanceA1 -= principal;
-		  totalInterest += interst;
+		  totalInterest += interest;
           monthsA1++;
 	  }
 	  if (balanceA1 < myMonthlyPayment) {
