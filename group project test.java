@@ -1,4 +1,5 @@
 // by. Carl Bolen, Tina Haidari, Arly Jahuey-Paz and Jessica Danielle Pittman
+package GroupProject2026
 import java.util.Scanner
 	
 public class TestLoan {
