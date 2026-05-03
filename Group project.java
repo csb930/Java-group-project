@@ -1,9 +1,17 @@
 package GroupProject2026;
 
+// by. Carl Bolen, Tina Haidari, Arly Jahuey-Paz and Jessica Danielle Pittman
+Package GroupProject2026
 import java.util.Scanner; 
-
 import java.util.Date; 
 
+ 
+
+public class Loan { 
+      private double loanAmount;  
+      private double annualInterestRate; 
+      private int numberOfYears;       
+      private Date loanCreationDate; 
 public class Loan { 
 private double extraPayment;
  
@@ -25,6 +33,13 @@ public Loan() {
 }
 //constructor
 public Loan(double annualInterestRate, int years, double loanAmount, double extraPayment) { 
+public Loan(double annualInterestRate, int numberOfYears, double loanAmount) {
+        this.annualInterestRate = annualInterestRate;
+        this.numberOfYears = numberOfYears;
+        this.loanAmount = loanAmount;
+        this.loanCreationDate = new Date(); 
+public Loan(double loanAmount, double annualInterestRate, int years, double extraPayment) { 
+
        this.loanAmount = loanAmount;  
 
        this.annualInterestRate = annualInterestRate; 
@@ -44,7 +59,7 @@ public Loan(double annualInterestRate, int years, double loanAmount, double extr
             return annualInterestRate; 
       } 
 
-      public void setAnnualInterestRate (double annualInterestRate) { 
+      public void setAnnualInterestRate(double annualInterestRate) { 
             this.annualInterestRate = annualInterestRate; 
       } 
 
@@ -53,6 +68,13 @@ public Loan(double annualInterestRate, int years, double loanAmount, double extr
       } 
       public void setYears (int years) { 
             this.years = years;
+      public int getNumberOfYears () { 
+            return numberOfYears; 
+      public getintYears () { 
+            return years; 
+      } 
+      public void setNumberOfYears (int numberOfYears) { 
+            this.numberOfYears = numberOfYears; 
       } 
 
       public double getLoanAmount () { 
@@ -67,6 +89,7 @@ public Loan(double annualInterestRate, int years, double loanAmount, double extr
       }
       public double getTotalPayment () {
         return getMonthlyPayment() * years * 12;
+    		return loanCreationDate;
       }
       public void setTotalPayment (double totalPayment) {
        this.totalPayment = totalPayment;
@@ -93,4 +116,38 @@ public Loan(double annualInterestRate, int years, double loanAmount, double extr
 
 
 
+      public double getTotalPayment() {
+            double totalPayment = getMonthlyPayment() * numberOfYears * 12;
+            return totalPayment;
+      }
+
+      public double getTotalInterest() {
+            double totalInterest = getTotalPayment() - loanAmount;
+            return totalInterest;
+      }
+
+      public Date getLoanDate() {
+            return loanCreationDate;
+      }
  
+}
+
+	public double getMonthlyPayment() {
+            double monthlyInterestRate = annualInterestRate / 1200;
+            double monthlyPayment = loanAmount * monthlyInterestRate / (1 - (1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12)));
+            return monthlyPayment;    
+      }
+	
+      public double getTotalPayment() {
+	          double totalPayment = getMonthlyPayment() * numberOfYears * 12;
+	          return totalPayment;    
+	  }
+
+      public double getTotalInterest() {
+	          double totalInterest = totalPayment - loanAmount;
+	          return totalInterest;    
+	  }
+
+      public java.util.Date getLoanDate() {
+	          return loanDate;
+	  }
