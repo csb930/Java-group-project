@@ -1,7 +1,7 @@
 package GroupProject2026;
 
 // by. Carl Bolen, Tina Haidari, Arly Jahuey-Paz and Jessica Danielle Pittman
-Package GroupProject2026
+
 import java.util.Scanner; 
 import java.util.Date; 
 
