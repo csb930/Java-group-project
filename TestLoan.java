@@ -1,5 +1,7 @@
-import java.util.Scanner;
+package GroupProject2026;
 
+import java.util.Scanner;
+// by. Carl Bolen, Tina Haidari, Arly Jahuey-Paz and Jessica Danielle Pittman
 public class TestLoan {
 public static void main(String[] args) {
     //Makes a scanner
