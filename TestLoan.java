@@ -1,4 +1,4 @@
-import java.util.Scanner
+import java.util.Scanner;
 
 public class TestLoan {
 public static void main(String[] args) {
@@ -37,7 +37,7 @@ System.out.print(  "Enter annual interest rate, for example, 8.25: ");
     System.out.println();
     extraPayEveryMonth(loan, extraPaymentAmount);
   }
-  
+}
   /** Extra payment first month only */
   public static void extraPayFirstMonth(Loan l, double extraPayment) {
 	  System.out.printf("Extra payment only first month $%.2f%n", extraPayment);
@@ -75,9 +75,9 @@ System.out.print(  "Enter annual interest rate, for example, 8.25: ");
 	  int monthsA2 = 0;
 	  double monthlyInterestRate = annualInterestRate / 1200;
 
-	  while (balanceA2 >= (myMonthlyPayment + myExtraPayment)) {
+	  while (balanceA2 >= (myMonthlyPayment + extraPayment)) {
 		  double interestRate = balanceA2 * monthlyInterestRate;
-		  double principal = (myMonthlyPayment + myExtraPayment) - interestRate;
+		  double principal = (myMonthlyPayment + extraPayment) - interestRate;
 		  balanceA2 -= principal;
 		  monthsA2++;
 		  totalInterest += interestRate;
@@ -106,7 +106,7 @@ System.out.print(  "Enter annual interest rate, for example, 8.25: ");
           // variables for Scenario B2 (With extra payment)
           double balanceB2 = loanAmount;
           int monthsB2 = 0;
-          double monthlyInterestRate = annualInterestRate / 1200;
+          double monthlyInterestRate = l.getAnnualInterestRate / 1200;
           //Scenario B1
           while (balanceB1 > 0) {
               double interestRate = balanceB1 * monthlyInterstRate;
@@ -114,6 +114,7 @@ System.out.print(  "Enter annual interest rate, for example, 8.25: ");
               balanceB1 -= principalPaid;
               monthsB1++;
           }
+  }
           //Scenario B2
           while (balanceB2 > 0) {
               double interest = balanceB2 * monthlyInterestRate;
