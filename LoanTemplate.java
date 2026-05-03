@@ -69,6 +69,7 @@ public class LoanTemplate {
 	  // 11/9
 	  /** Find total interest */
 	  public double getTotalInterest() {
+	    double totalInterest = getTotalPayment() - loanAmount; // totalInterest is the difference of total payment minus loan amount
 	    // to do
 		// totalInterest is the difference of total payment minus loan amount
 		  double totalIntrest = totalPayment - this.getTotalPayment();
